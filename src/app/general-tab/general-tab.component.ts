@@ -7,8 +7,10 @@ import { faSync } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
-import { NavbarComponent} from './navbar/navbar.component';
-import { AdaptersTableComponent } from './adapters-table/adapters-table.component';
+import { AdaptersTableComponent } from '../adapters-table/adapters-table.component';
+
+import { DataInterface }from '../DataInterface';
+import { ADAPTERDATA } from '../Data';
 
 //document.getElementById() shortener in scr/assets/js/global.js
 declare var _: any;
@@ -17,22 +19,29 @@ declare var _: any;
 declare var _c: any;
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-general-tab',
+  templateUrl: './general-tab.component.html',
+  styleUrls: ['./general-tab.component.css']
 })
 
-export class AppComponent {
+export class GeneralTabComponent {
 
-  title = 'WAC';
+  //for associated {{adapter}} in general-tab.compent.html imput from adapterSelector(x)
+  // in adapters-table.ts
+
+  @Input() adapter: string;
+
+  /* -- Font Awesome START -- */
   faCoffee = faCoffee;
-  faCog = faCog;
+  faGear = faCog;
   faInfoCircle = faInfoCircle;
   faCircleArrowDown = faArrowCircleDown;
-  faSync = faSync;
-  faCheckCircle = faCheckCircle;
-  faQuestionCircle = faQuestionCircle;
+  faArrowRotateRight = faSync;
+  faCircleCheck = faCheckCircle;
+  faCircleQuestion = faQuestionCircle;
+  /* -- Font Awesome END -- */
 
+  /* -- for HELP SECTION expand/collapse (old school JS)  START -- */
   helpExpanded = false;
 
   expandHelp(){
@@ -69,15 +78,19 @@ export class AppComponent {
     }
 
   }
+  /* -- for HELP SECTION expand/collapse (old school JS)  END -- */
 
-  @Output() messageEvent = new EventEmitter<string>();
+  /* -- adapter data model/controller START -- */
 
-  adapter = '';
+  //pulls in adapter information 
+   //need to tie in adapterSelector() <--> Data.ts/DataInterface.ts/general-tab.comonents
+  adapterData: DataInterface[] = ADAPTERDATA;
 
-  recAdapterSelected($event){
+  /* -- adapter data model/controller END -- */
 
-    this.adapter = $event;
-    //console.log("app.component: " + this.adapter);
+  constructor() { }
+
+  ngOnInit(): void {
   }
-  
+
 }

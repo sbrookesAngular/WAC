@@ -1,0 +1,16 @@
+<div *ngFor="let adapter of adapters" class="row cursorPointer focused">
+
+    <div class="col-6" (click)="adapterSelector(adapter.name)">
+
+      {{adapter.name}}
+
+    </div>
+
+    <div class="col-6">
+
+      <!-- inline ternaries determine state of ports on init; 1 way/ 2 way  bound on change -->
+      <fa-icon [icon]="adapter.status === 'Enabled' ? faCircleCheck : faCircleArrowDown" [ngStyle]="{'color': adapter.status === 'Enabled' ? 'green' : adapter.status === 'Disabled' ? 'rgb(239, 223, 6)' : 'red'}"></fa-icon> {{adapter.status}}
+
+    </div>
+
+  </div>

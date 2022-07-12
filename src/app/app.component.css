@@ -1,0 +1,34 @@
+/*
+if using *ngFor, must put permanet class styles in src/styles.css
+I guess it has to do with rendering and scope because of *ngFor???
+*/
+
+.test{
+-webkit-box-shadow:0px 0px 0px 1px black inset;
+-moz-box-shadow:0px 0px 0px 1px black inset;
+box-shadow:0px 0px 0px 1px black inset;
+}
+
+.pageTitle{
+font-size:1.8rem;
+margin-left:1rem;
+}
+
+.fnctMenuItem{
+font-weight:700;   
+margin-right:1.5rem;
+}
+
+#intelLogo{
+width:4rem;
+}
+
+/* -- Landscape-oriented smartphones and some tablets  -- */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+
+}
+
+/* -- Portrait-oriented smartphones  -- */
+@media screen and (max-width: 575px) {
+    
+}

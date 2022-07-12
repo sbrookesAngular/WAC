@@ -1,0 +1,106 @@
+{{adapter}}
+
+<div class="row" *ngFor="let adapterInfo of adapterData">
+
+  <div id="expTabCols" class="col-9 col-md-9 col-lg-9">
+    
+    <div class="row">
+
+      <div class="ht_8 col-12 col-md-3 col-lg-2">
+            
+        Bus Type<br>
+        <b>{{adapterInfo.busType}}</b>
+
+      </div> 
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Driver Name<br>
+        <b>{{adapterInfo.driverName}}</b>
+          
+      </div> 
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Driver Version<br>
+        <b>{{adapterInfo.driverVer}}</b>
+          
+      </div> 
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        ETrackID<br>
+        <b>{{adapterInfo.eTrackID}}</b>
+          
+      </div> 
+      
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Location<br>
+        <b>{{adapterInfo.location}}</b>
+          
+      </div>  
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Media Type<br>
+        <b>{{adapterInfo.medType}}</b>
+          
+      </div>  
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Negotiated Link Speed<br>
+        <b>{{adapterInfo.negLinkSpd}}</b>
+          
+      </div>  
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Negotiated Link Width<br>
+        <b>{{adapterInfo.negLinkWdth}}</b>
+          
+      </div>  
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Part Number<br>
+        <b>{{adapterInfo.prtNum}}</b>
+          
+      </div>  
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Permanent Ethernet Address<br>
+        <b>{{adapterInfo.permEthAdd}}</b>
+          
+      </div>  
+
+      <div class="ht_8  col-12 col-md-3 col-lg-2">
+          
+        Port<br>
+        <b>{{adapterInfo.port}}</b>
+          
+      </div>
+          
+    </div>
+
+  </div>
+      
+  <div id="expHelpCol" class="col-3 col-md-3 col-lg-3 ht_16">
+
+    <div class="">
+  
+      <div class="float-end">
+
+        <fa-icon class="cursorPointer" (click)="expandHelp()" [icon]="faCircleQuestion" style="color:blue; "></fa-icon>
+              
+      </div>
+
+      <div id="expHelpContent" [innerHTML]="adapterInfo.helpInfo"></div>
+                 
+    </div>
+          
+  </div>
+        
+</div>
