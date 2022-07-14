@@ -28,7 +28,6 @@ Temperature Support
 Yellow Bang Identification
 
 
-
 PRIMARY VIEWS
 ------------------------------
 - list of adapters
@@ -43,50 +42,64 @@ all tabs have correlating data with an expandable help section
 https://www.npmjs.com/package/@fortawesome/angular-fontawesome
 -->
 
-<!-- <div class="container-fluid"> -->
-<!-- <div class="container"> -->
+<div class="container-fluid" style="margin-bottom:-8px;">
 
-  <div class="container-fluid" style="margin-bottom:-8px;">
-
-    <div class="row">
+  <div class="row">
       
-      <div class="p-3 mb-2 bg-primary text-white">
+    <div class="p-3 mb-2 bg-primary text-white">
   
-        <img id="intelLogo" src="assets/images/intelWhite.png" alt="intelWhite.png">
+      <img id="intelLogo" src="assets/images/intelWhite.png" alt="intelWhite.png">
         
-        <span class="pageTitle">PROSet Network Adapter Configuration</span> 
+      <span id="pageTitle" class="pageTitle">PROSet Network Adapter Configuration</span> 
       
-      </div>
-  
     </div>
   
   </div>
   
-  <app-navbar></app-navbar>
+</div>
   
-  <div class="container-fluid mt-3">
+<app-navbar></app-navbar>
   
-    <div class="row">
+<div class="container-fluid mt-3">
+  
+  <div class="row">
+
+    <div id="dynamicBody" class="col-12 col-md-12 col-lg-12 test">
   
       <div>
   
-        <!-- dynamically rendered -->
+        <!-- dynamically rendered ? -->
         <h3>Dell R730-27550</h3>
   
       </div>
-  
-    </div>
-  
-    <div class="row">
-  
+
       <!-- dynamically bound functionalities -->
       <div>
   
-        <fa-icon class="cursorPointer" [icon]="faSync" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Refresh </span> 
-        <fa-icon class="cursorPointer" [icon]="faCircleArrowDown" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Disable Device </span>  
-        <fa-icon class="cursorPointer" [icon]="faInfoCircle" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Identify Adapter </span> 
-        <fa-icon class="cursorPointer" [icon]="faCog" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Settings </span>
-  
+        <div class="inlineWrapper">
+
+          <fa-icon class="cursorPointer" [icon]="faSync" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Refresh </span> 
+
+        </div>
+
+        <div class="inlineWrapper">
+
+          <fa-icon class="cursorPointer" [icon]="faCircleArrowDown" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Disable Device </span>  
+
+        </div>
+
+        <div class="inlineWrapper">
+
+          <fa-icon class="cursorPointer" [icon]="faInfoCircle" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Identify Adapter </span> 
+
+        </div>
+
+        <div class="inlineWrapper" (click)="expandDynamicAside('settings')">
+
+          <fa-icon class="cursorPointer" [icon]="faCog" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Settings </span>
+
+        </div>
+
       </div>
   
       <!-- set up col associated to adapter status -->
@@ -101,77 +114,98 @@ https://www.npmjs.com/package/@fortawesome/angular-fontawesome
         Status
   
       </div>
-  
-    </div>
-  
-    <hr class="mt-1 mb-1"/>
-  
-    <!-- dynamically rendered -->
-    <!-- margin-bottom:8rem; for mock-up -->
-    <div style="margin-bottom:8rem;" class="row">
-  
-      <app-adapters-table (messageEvent)="recAdapterSelected($event)"></app-adapters-table>
-  
-    </div>
-  
-    <hr class="mt-1 mb-1"/>
-    <!-- margin-bottom:20rem; for mock-up -->
-    <div style="margin-bottom:20rem;" class="row">
+
+      <hr class="mt-1 mb-1"/>
   
       <!-- dynamically rendered -->
-      <h4>{{adapter}}</h4>
+      <!-- margin-bottom:8rem; for mock-up -->
+      <div style="margin-bottom:8rem;" class="row">
   
-      <nav>
-  
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">General</button>
-  
-          <button class="nav-link" id="nav-diagnostics-tab" data-bs-toggle="tab" data-bs-target="#nav-diagnostics" type="button" role="tab" aria-controls="nav-diagnostics" aria-selected="false">Diagnostics</button>
-  
-          <button class="nav-link" id="nav-teaming-tab" data-bs-toggle="tab" data-bs-target="#nav-teaming" type="button" role="tab" aria-controls="nav-teaming" aria-selected="false">Teaming</button>
-  
-          <button class="nav-link" id="nav-vlans-tab" data-bs-toggle="tab" data-bs-target="#nav-vlans" type="button" role="tab" aria-controls="nav-vlans" aria-selected="false">VLANs</button>
-  
-        </div>
-  
-      </nav>
-  
-      <div class="tab-content" id="nav-tabContent">
-  
-        <!-- TAB START -->
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-  
-          <app-general-tab [adapter]="adapter"></app-general-tab>
-  
-        </div>
-        <!-- TAB END -->
-  
-        <!-- TAB START -->
-        <div class="tab-pane fade" id="nav-diagnostics" role="tabpanel" aria-labelledby="nav-diagnostics-tab">
-          
-          Diagnostics Content...
-        
-        </div>
-        <!-- TAB END -->
-  
-        <!-- TAB START -->
-        <div class="tab-pane fade" id="nav-teaming" role="tabpanel" aria-labelledby="nav-teaming-tab">
-          
-          Teaming Content...
-        
-        </div>
-        <!-- TAB END -->
-  
-        <!-- TAB START -->
-        <div class="tab-pane fade" id="nav-vlans" role="tabpanel" aria-labelledby="nav-vlans-tab">
-          
-          VLANs Content...
-        
-        </div>
-        <!-- TAB END -->
+        <app-adapters-table (messageEvent)="recAdapterSelected($event)"></app-adapters-table>
   
       </div>
   
-    </div>
+      <hr class="mt-1 mb-1"/>
+
+      <!-- margin-bottom:20rem; for mock-up -->
+      <div style="margin-bottom:20rem;" class="row">
   
+        <!-- dynamically rendered -->
+        <h4>{{adapter}}</h4>
+  
+        <nav>
+  
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">General</button>
+  
+            <button class="nav-link" id="nav-diagnostics-tab" data-bs-toggle="tab" data-bs-target="#nav-diagnostics" type="button" role="tab" aria-controls="nav-diagnostics" aria-selected="false">Diagnostics</button>
+  
+            <button class="nav-link" id="nav-teaming-tab" data-bs-toggle="tab" data-bs-target="#nav-teaming" type="button" role="tab" aria-controls="nav-teaming" aria-selected="false">Teaming</button>
+  
+            <button class="nav-link" id="nav-vlans-tab" data-bs-toggle="tab" data-bs-target="#nav-vlans" type="button" role="tab" aria-controls="nav-vlans" aria-selected="false">VLANs</button>
+  
+          </div>
+  
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+  
+          <!-- TAB START -->
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+  
+            <!-- <app-general-tab [rawAdapterData]="rawAdapterData"  [adapter]="adapter"></app-general-tab> -->
+            <app-general-tab [adapter]="adapter"></app-general-tab>
+  
+          </div>
+          <!-- TAB END -->
+  
+          <!-- TAB START -->
+          <div class="tab-pane fade" id="nav-diagnostics" role="tabpanel" aria-labelledby="nav-diagnostics-tab">
+          
+            Diagnostics Content...
+        
+          </div>
+          <!-- TAB END -->
+  
+          <!-- TAB START -->
+          <div class="tab-pane fade" id="nav-teaming" role="tabpanel" aria-labelledby="nav-teaming-tab">
+          
+            <div class="inlineWrapper cursorPointer" (click)="expandDynamicAside('createTeam')">
+
+              <fa-icon class="" [icon]="faPlusCircle" style="color:blue;"></fa-icon><b> Create Team</b>
+
+            </div>
+            
+          </div>
+          <!-- TAB END -->
+  
+          <!-- TAB START -->
+          <div class="tab-pane fade" id="nav-vlans" role="tabpanel" aria-labelledby="nav-vlans-tab">
+          
+            VLANs Content...
+        
+          </div>
+          <!-- TAB END -->
+  
+        </div>
+
+      </div>
+      <!-- ROW END -->
+
+    </div>
+    <!-- <div class="col-12 col-md-12 col-lg-12"> END -->
+
+    <!-- dynamic aside (style="display:none;" on init) >> use Angular ngIf ?   -->
+    <div id="dynamicAside" class="col-6 col-md-5 col-lg-5 test" style="display:none;">
+
+      <fa-icon class="cursorPointer" [icon]="faWindowClose" style="color:blue;" (click)="closeDynamicAside()"></fa-icon>
+
+      <div id="dynamicAsideRoot"></div>
+
+    </div>
+
   </div>
+  <!-- ROW END -->
+  
+</div>

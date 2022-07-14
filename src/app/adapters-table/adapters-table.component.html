@@ -1,5 +1,6 @@
 <div *ngFor="let adapter of adapters" class="row cursorPointer focused">
 
+    <!-- <div class="col-6" (click)="adapterSelector(adapter.name, adapter.id)"> -->
     <div class="col-6" (click)="adapterSelector(adapter.name)">
 
       {{adapter.name}}

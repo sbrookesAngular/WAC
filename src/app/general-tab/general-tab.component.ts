@@ -9,8 +9,10 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { AdaptersTableComponent } from '../adapters-table/adapters-table.component';
 
+
 import { DataInterface }from '../DataInterface';
-import { ADAPTERDATA } from '../Data';
+import { adapterRawData } from '../Data';
+import { ADAPTERDATA2 } from '../Data2';
 
 //document.getElementById() shortener in scr/assets/js/global.js
 declare var _: any;
@@ -25,11 +27,6 @@ declare var _c: any;
 })
 
 export class GeneralTabComponent {
-
-  //for associated {{adapter}} in general-tab.compent.html imput from adapterSelector(x)
-  // in adapters-table.ts
-
-  @Input() adapter: string;
 
   /* -- Font Awesome START -- */
   faCoffee = faCoffee;
@@ -82,9 +79,17 @@ export class GeneralTabComponent {
 
   /* -- adapter data model/controller START -- */
 
+  //for associated {{adapter}} in general-tab.compent.html imput from adapterSelector(x)
+  // in adapters-table.ts
+
+  //this is recieving the broadcast of this.adapter from adapters-table component
+  @Input() adapter: string;
+
   //pulls in adapter information 
-   //need to tie in adapterSelector() <--> Data.ts/DataInterface.ts/general-tab.comonents
-  adapterData: DataInterface[] = ADAPTERDATA;
+  //need to tie in adapterSelector() <--> Data.ts/DataInterface.ts/general-tab.comonents
+  adapterData: DataInterface[] = ADAPTERDATA2;
+  // dapterData: DataInterface[] = adapterRawData;
+
 
   /* -- adapter data model/controller END -- */
 
