@@ -133,15 +133,13 @@ export class AppComponent {
 
   /* -- dynamic dynamicBody & dynamicAside END -- */
 
-  //@Output() messageEvent = new EventEmitter<string>();
-
   adapter = '';
   rawAdapterData = '';
 
   recAdapterSelected($event){
 
     this.adapter = $event;
-    console.log("app.component: " + this.adapter);
+    // console.log("app.component: " + this.adapter);
     
   }
   

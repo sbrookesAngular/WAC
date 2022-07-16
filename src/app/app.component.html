@@ -64,16 +64,15 @@ https://www.npmjs.com/package/@fortawesome/angular-fontawesome
   
   <div class="row">
 
-    <div id="dynamicBody" class="col-12 col-md-12 col-lg-12 test">
+    <div id="dynamicBody" class="col-12 col-md-12 col-lg-12">
   
       <div>
   
-        <!-- dynamically rendered ? -->
         <h3>Dell R730-27550</h3>
   
       </div>
 
-      <!-- dynamically bound functionalities -->
+      <!-- dynamically bound functionalities? -->
       <div>
   
         <div class="inlineWrapper">
@@ -117,8 +116,6 @@ https://www.npmjs.com/package/@fortawesome/angular-fontawesome
 
       <hr class="mt-1 mb-1"/>
   
-      <!-- dynamically rendered -->
-      <!-- margin-bottom:8rem; for mock-up -->
       <div style="margin-bottom:8rem;" class="row">
   
         <app-adapters-table (messageEvent)="recAdapterSelected($event)"></app-adapters-table>
@@ -130,65 +127,8 @@ https://www.npmjs.com/package/@fortawesome/angular-fontawesome
       <!-- margin-bottom:20rem; for mock-up -->
       <div style="margin-bottom:20rem;" class="row">
   
-        <!-- dynamically rendered -->
-        <h4>{{adapter}}</h4>
-  
-        <nav>
-  
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">General</button>
-  
-            <button class="nav-link" id="nav-diagnostics-tab" data-bs-toggle="tab" data-bs-target="#nav-diagnostics" type="button" role="tab" aria-controls="nav-diagnostics" aria-selected="false">Diagnostics</button>
-  
-            <button class="nav-link" id="nav-teaming-tab" data-bs-toggle="tab" data-bs-target="#nav-teaming" type="button" role="tab" aria-controls="nav-teaming" aria-selected="false">Teaming</button>
-  
-            <button class="nav-link" id="nav-vlans-tab" data-bs-toggle="tab" data-bs-target="#nav-vlans" type="button" role="tab" aria-controls="nav-vlans" aria-selected="false">VLANs</button>
-  
-          </div>
-  
-        </nav>
-
-        <div class="tab-content" id="nav-tabContent">
-  
-          <!-- TAB START -->
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-  
-            <!-- <app-general-tab [rawAdapterData]="rawAdapterData"  [adapter]="adapter"></app-general-tab> -->
-            <app-general-tab [adapter]="adapter"></app-general-tab>
-  
-          </div>
-          <!-- TAB END -->
-  
-          <!-- TAB START -->
-          <div class="tab-pane fade" id="nav-diagnostics" role="tabpanel" aria-labelledby="nav-diagnostics-tab">
-          
-            Diagnostics Content...
-        
-          </div>
-          <!-- TAB END -->
-  
-          <!-- TAB START -->
-          <div class="tab-pane fade" id="nav-teaming" role="tabpanel" aria-labelledby="nav-teaming-tab">
-          
-            <div class="inlineWrapper cursorPointer" (click)="expandDynamicAside('createTeam')">
-
-              <fa-icon class="" [icon]="faPlusCircle" style="color:blue;"></fa-icon><b> Create Team</b>
-
-            </div>
-            
-          </div>
-          <!-- TAB END -->
-  
-          <!-- TAB START -->
-          <div class="tab-pane fade" id="nav-vlans" role="tabpanel" aria-labelledby="nav-vlans-tab">
-          
-            VLANs Content...
-        
-          </div>
-          <!-- TAB END -->
-  
-        </div>
+        <!-- get rid of [adapter]="adapter" -->
+        <app-general-tab [adapter]="adapter"></app-general-tab>
 
       </div>
       <!-- ROW END -->

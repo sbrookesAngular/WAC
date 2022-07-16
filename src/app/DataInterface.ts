@@ -3,6 +3,7 @@ export interface DataInterface {
 
     //commented out -> need to see how CMDlets data is imported and HTML rendered
 
+    index: number;
     adapterName: string; 
     //busKey: string; 
     busType: string; 
