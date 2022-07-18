@@ -11,6 +11,7 @@ import { AdaptersTableComponent } from './adapters-table/adapters-table.componen
 // https://www.npmjs.com/package/@fortawesome/angular-fontawesome
 //https://stackoverflow.com/questions/68792617/font-awesome-icons-are-not-showing-even-though-package-is-installed-on-angular
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdapterSettingsComponent } from './adapter-settings/adapter-settings.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavbarComponent,
     GeneralTabComponent,
     AdaptersTableComponent,
+    AdapterSettingsComponent,
   ],
   imports: [
     BrowserModule,

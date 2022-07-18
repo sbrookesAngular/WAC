@@ -12,6 +12,7 @@ import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
 import { NavbarComponent} from './navbar/navbar.component';
 import { AdaptersTableComponent } from './adapters-table/adapters-table.component';
+import { AdapterSettingsComponent } from './adapter-settings/adapter-settings.component';
 
 //document.getElementById() shortener in scr/assets/js/global.js
 declare var _: any;
@@ -86,8 +87,6 @@ export class AppComponent {
     let dynamicBodyState = _("dynamicBody").getAttribute("class");
     let dynamicAsideState = _("dynamicAside").getAttribute("class");
     let dynamicAsideDisplayState = _("dynamicAside").style.display;
-    
-    console.log(x);
 
     if(dynamicAsideDisplayState == "none"){
 

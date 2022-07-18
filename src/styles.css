@@ -11,6 +11,10 @@ css scopes are picky
 -moz-box-shadow:0px 0px 0px 1px black inset;
 box-shadow:0px 0px 0px 1px black inset;
 }
+
+.navIcons{
+width:1.5rem;
+}
     
 .cursorPointer:hover{
 cursor:pointer;
@@ -38,6 +42,15 @@ min-height:16rem;
 display:none;
 background-color: rgb(255, 252, 233);
 }
+
+.helpBckClr{
+ background-color: rgb(255, 252, 233);   
+}
+
+.btnBorder{
+border:1px solid rgb(67, 67, 250);
+}
+
         
 /* -- Landscape-oriented smartphones and some tablets  -- */
 @media screen and (min-width: 576px) and (max-width: 992px) {
