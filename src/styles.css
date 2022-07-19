@@ -51,6 +51,7 @@ background-color: rgb(255, 252, 233);
 border:1px solid rgb(67, 67, 250);
 }
 
+
         
 /* -- Landscape-oriented smartphones and some tablets  -- */
 @media screen and (min-width: 576px) and (max-width: 992px) {

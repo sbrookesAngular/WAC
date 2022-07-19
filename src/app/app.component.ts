@@ -97,9 +97,90 @@ export class AppComponent {
       if(x == 'settings'){
 
         //placeholder for now
-        _('dynamicAsideRoot').innerHTML = `<h4><b>Adapter Settings</b></h4>
-        <fa-icon class="" [icon]="faPlusCircle" style="color:blue;"></fa-icon>
-        <p>&lt;app-adapter-settings&gt; component goes here</p>`;
+        // _('dynamicAsideRoot').innerHTML = `<h4><b>Adapter Settings</b></h4>
+        // <fa-icon class="" [icon]="faPlusCircle" style="color:blue;"></fa-icon>
+        // <p>&lt;app-adapter-settings&gt; component goes here</p>`;
+
+        _('dynamicAsideRoot').innerHTML = `
+        <div class="row">
+
+          <div class="col-12 col-md-12 col-lg-12">
+
+              <div class="row mt-3">
+
+                  <div class="col-6 col-md-6 col-lg-6">
+
+                      <select class="form-select" aria-label="Default select example">
+
+                          <option selected>Select</option>
+                          <option value="dirCchAcc">Direct Cache Access</option>
+                          <option value="dmaCoalescing">DMA Coalescing</option>
+                          <option value="flowControl">Flow Control</option>
+                          <option value="imp">Interrupt Moderation Rate</option>
+                          <option value="ipv4">IPv4 Checksum Offload</option>
+                          <option value="jumboPckt">Jumbo Packet</option>
+                          <option value="lso4">Large Send Offload V2 (IPv4)</option>
+                          <option value="lso6">Large Send Offload V2 (IPv6)</option>
+                          <option value="locAdmnAddr">Locally Administered Address</option>
+                          <option value="logLnkState">Log Link State</option>
+                          <option value="lwLtIntPrts">Low Latency Interrupt Ports</option>
+                          <option value="lwLtInts">Low Latency Interrupts</option>
+                          <option value="mxNmRssPrcs">Maximum Number of RSS Processors</option>
+                          <option value="mxNmRssQs">Maximum Number of RSS Queus</option>
+              
+                      </select>
+              
+                  </div>
+              
+                  <div class="col-6 col-md-6 col-lg-6">
+              
+                      <select class="form-select" aria-label="Default select example">
+                          
+                          <option selected>Select</option>
+                          <option value="enabled">Enabled</option>
+                          <option value="disabled">Disabled</option>
+              
+                      </select>
+
+                      <p>
+                          Device Default<br>
+                          <b>Enabled</b>
+                      </p>
+
+                      <p>
+                          Profile Value<br>
+                          <b>Disbaled</b>
+                      </p>
+                      
+                  </div>
+
+              </div>
+
+              <div class="col-12 col-md-12 col-lg-12 p-2 test">
+
+                  <div class="helpBckClr mt-3">
+          
+                      This tab displays detailed info about the currently selected adapter.
+                      <br>
+                      <br>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          
+                  </div>
+
+                  <div class="mt-3 text-center">
+
+                    <button type="button" class="btn btn-light btnBorder">Discard Changes</button>
+                    <button type="button" class="btn btn-primary">Apply Changes</button>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+      </div>
+
+        `;
 
       }else if(x == 'createTeam'){
 
