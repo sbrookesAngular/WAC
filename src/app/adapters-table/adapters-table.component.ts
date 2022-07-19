@@ -79,7 +79,7 @@ export class AdaptersTableComponent implements OnInit {
         <div class="tab-content" id="nav-tabContent">
   
           <!-- TAB START -->
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="tab-pane fade show active mt-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
   
             <div id="expTabCols" class="col-12 col-md-12 col-lg-12">
       
@@ -192,7 +192,7 @@ export class AdaptersTableComponent implements OnInit {
           <!-- TAB END -->
   
           <!-- TAB START -->
-          <div class="tab-pane fade" id="nav-diagnostics" role="tabpanel" aria-labelledby="nav-diagnostics-tab">
+          <div class="tab-pane fade mt-3" id="nav-diagnostics" role="tabpanel" aria-labelledby="nav-diagnostics-tab">
             
             Diagnostics Content...
             <br>
@@ -205,7 +205,7 @@ export class AdaptersTableComponent implements OnInit {
           <!-- TAB END -->        
   
           <!-- TAB START -->
-          <div class="tab-pane fade" id="nav-teaming" role="tabpanel" aria-labelledby="nav-teaming-tab">
+          <div class="tab-pane fade mt-3" id="nav-teaming" role="tabpanel" aria-labelledby="nav-teaming-tab">
    
             <div class="cursorPointer" (click)="expandDynamicAside('createTeam')" onclick="accordion(this)">
 
@@ -234,7 +234,7 @@ export class AdaptersTableComponent implements OnInit {
           <!-- TAB END -->
   
           <!-- TAB START -->
-          <div class="tab-pane fade" id="nav-vlans" role="tabpanel" aria-labelledby="nav-vlans-tab">
+          <div class="tab-pane fade mt-3" id="nav-vlans" role="tabpanel" aria-labelledby="nav-vlans-tab">
             
             VLANs Content...
             <br>

@@ -66,55 +66,66 @@ https://www.npmjs.com/package/@fortawesome/angular-fontawesome
   <div class="row">
 
     <div id="dynamicBody" class="col-12 col-md-12 col-lg-12">
-  
-      <div>
-  
-        <h3>Dell R730-27550</h3>
-  
-      </div>
 
-      <!-- dynamically bound functionalities? -->
-      <div>
+      <div class="row mt-2">
   
-        <div class="inlineWrapper">
-
-          <fa-icon class="cursorPointer" [icon]="faSync" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Refresh </span> 
-
+        <div>
+    
+          <h3>Dell R730-27550</h3>
+    
         </div>
 
-        <div class="inlineWrapper">
+        <!-- dynamically bound functionalities? -->
+        <div>
+    
+          <div class="inlineWrapper">
 
-          <fa-icon class="cursorPointer" [icon]="faCircleArrowDown" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Disable Device </span>  
+            <fa-icon class="cursorPointer" [icon]="faSync" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Refresh </span> 
+
+          </div>
+
+          <div class="inlineWrapper">
+
+            <fa-icon class="cursorPointer" [icon]="faCircleArrowDown" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Disable Device </span>  
+
+          </div>
+
+          <div class="inlineWrapper">
+
+            <fa-icon class="cursorPointer" [icon]="faInfoCircle" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Identify Adapter </span> 
+
+          </div>
+
+          <div class="inlineWrapper" (click)="expandDynamicAside('settings')">
+
+            <fa-icon class="cursorPointer" [icon]="faCog" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Settings </span>
+
+          </div>
 
         </div>
+        <!-- row closer-->
 
-        <div class="inlineWrapper">
+        <div class="row mt-2">
 
-          <fa-icon class="cursorPointer" [icon]="faInfoCircle" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Identify Adapter </span> 
+          <!-- set up col associated to adapter status -->
+          <div class="col-6">
+  
+            <b>Name </b> 
+  
+          </div>
+  
+          <div class="col-6">
+  
+            <b>&nbsp;&nbsp;&nbsp;Status</b>
+  
+          </div>
+
 
         </div>
-
-        <div class="inlineWrapper" (click)="expandDynamicAside('settings')">
-
-          <fa-icon class="cursorPointer" [icon]="faCog" style="color:blue;"></fa-icon> <span class="fnctMenuItem cursorPointer"> Settings </span>
-
-        </div>
+        <!-- row closer-->
 
       </div>
   
-      <!-- set up col associated to adapter status -->
-      <div class="col-6">
-  
-        Name  
-  
-      </div>
-  
-      <div class="col-6">
-  
-        Status
-  
-      </div>
-
       <hr class="mt-1 mb-1"/>
   
       <div style="margin-bottom:8rem;" class="row">
